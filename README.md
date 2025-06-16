@@ -18,7 +18,7 @@
 # 添加 tap
 brew tap imhuso/cunzhi
 
-# 安装工具集（需要较长编译时间）
+# 安装工具集（使用预编译二进制，快速安装）
 brew install cunzhi
 ```
 

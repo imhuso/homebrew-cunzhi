@@ -1,39 +1,29 @@
 class Cunzhi < Formula
   desc "智能代码审查MCP工具集 - 包含寸止MCP服务器和等一下弹窗界面"
   homepage "https://github.com/imhuso/cunzhi"
-  url "https://github.com/imhuso/cunzhi/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "e38818a6f60c752a064f37b586b06d9fb06246b03b511a7b60f29dc205b7524c"
   license "MIT"
   version "0.2.0"
 
   # 仅支持 macOS
   depends_on :macos
 
-  depends_on "rust" => :build
-  depends_on "node" => :build
+  # 根据系统架构选择对应的预编译二进制
+  if Hardware::CPU.intel?
+    url "https://github.com/imhuso/cunzhi/releases/download/v0.2.0/cunzhi-cli-v0.2.0-macos-x86_64.tar.gz"
+    sha256 "78e2c105a43a04b5d00b945fff16bade4d7aea4f1e3643ca8a53807ed49236c1"
+  elsif Hardware::CPU.arm?
+    url "https://github.com/imhuso/cunzhi/releases/download/v0.2.0/cunzhi-cli-v0.2.0-macos-aarch64.tar.gz"
+    sha256 "9c68b3d77dd2355a7a453148f24e48c24dc638757cd45b8c3587c48a368a01de"
+  end
 
   def install
-    # 安装 pnpm（使用 npm）
-    system "npm", "install", "-g", "pnpm"
-
-    # 构建前端资源
-    system "pnpm", "install"
-    system "pnpm", "build"
-
-    # 构建 Rust CLI 工具
-    system "cargo", "build", "--release"
-
-    # 安装二进制文件
-    bin.install "target/release/寸止"
-    bin.install "target/release/等一下"
-
-    # 安装文档
-    doc.install "README.md" if File.exist?("README.md")
-    doc.install "INSTALL.md" if File.exist?("INSTALL.md")
+    # 直接安装预编译的二进制文件
+    bin.install "寸止"
+    bin.install "等一下"
   end
 
   test do
-    # 测试 CLI 工具是否正确安装和运行
+    # 测试 CLI 工具是否正确安装
     assert_match "寸止", shell_output("#{bin}/寸止 --version 2>&1", 0)
     assert_match "寸止", shell_output("#{bin}/等一下 --version 2>&1", 0)
   end
