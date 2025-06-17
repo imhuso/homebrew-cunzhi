@@ -3,10 +3,7 @@ class Cunzhi < Formula
   homepage "https://github.com/imhuso/cunzhi"
   license "MIT"
   version "0.2.6"
-
-  # 仅支持 macOS
-  depends_on :macos
-
+  
   # 根据系统架构选择对应的预编译二进制
   if Hardware::CPU.intel?
     url "https://github.com/imhuso/cunzhi/releases/download/v0.2.6/cunzhi-cli-v0.2.6-macos-x86_64.tar.gz"
