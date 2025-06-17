@@ -1,13 +1,13 @@
+
 class Cunzhi < Formula
   desc "智能代码审查MCP工具集 - 包含寸止MCP服务器和等一下弹窗界面"
   homepage "https://github.com/imhuso/cunzhi"
   license "MIT"
   version "0.2.6"
 
-  # 明确声明这是预编译二进制，不需要编译工具
-  # 这可以帮助 Homebrew 跳过一些编译相关的检查
+  # 仅支持 macOS
   depends_on :macos
-  
+
   # 根据系统架构选择对应的预编译二进制
   if Hardware::CPU.intel?
     url "https://github.com/imhuso/cunzhi/releases/download/v0.2.6/cunzhi-cli-v0.2.6-macos-x86_64.tar.gz"
