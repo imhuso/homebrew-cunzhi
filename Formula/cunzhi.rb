@@ -3,6 +3,10 @@ class Cunzhi < Formula
   homepage "https://github.com/imhuso/cunzhi"
   license "MIT"
   version "0.2.6"
+
+  # 明确声明这是预编译二进制，不需要编译工具
+  # 这可以帮助 Homebrew 跳过一些编译相关的检查
+  depends_on :macos
   
   # 根据系统架构选择对应的预编译二进制
   if Hardware::CPU.intel?
@@ -12,6 +16,9 @@ class Cunzhi < Formula
     url "https://github.com/imhuso/cunzhi/releases/download/v0.2.6/cunzhi-cli-v0.2.6-macos-aarch64.tar.gz"
     sha256 "61a67c575a9c625ae7f411e0ed27d0e793947e211f5ac053a60e38914cb5633f"
   end
+
+  # 明确声明不需要编译，这是预编译二进制
+  bottle :unneeded
 
   def install
     # 直接安装预编译的二进制文件
