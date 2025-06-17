@@ -5,8 +5,18 @@ class Cunzhi < Formula
   version "0.2.6"
 
   # 明确声明这是预编译二进制，不需要编译工具
-  # 这可以帮助 Homebrew 跳过一些编译相关的检查
+  # 强制跳过所有编译相关检查
   depends_on :macos
+
+  # 明确声明不需要任何编译工具
+  # 这是预编译二进制，不应该检查 Xcode/CLT
+  def self.needs_xcode?
+    false
+  end
+
+  def self.needs_clt?
+    false
+  end
   
   # 根据系统架构选择对应的预编译二进制
   if Hardware::CPU.intel?
