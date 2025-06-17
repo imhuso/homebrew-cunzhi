@@ -2,18 +2,18 @@ class Cunzhi < Formula
   desc "智能代码审查MCP工具集 - 包含寸止MCP服务器和等一下弹窗界面"
   homepage "https://github.com/imhuso/cunzhi"
   license "MIT"
-  version "0.2.4"
+  version "0.2.6"
 
   # 仅支持 macOS
   depends_on :macos
 
   # 根据系统架构选择对应的预编译二进制
   if Hardware::CPU.intel?
-    url "https://github.com/imhuso/cunzhi/releases/download/v0.2.0/cunzhi-cli-v0.2.4-macos-x86_64.tar.gz"
-    sha256 "4ad371c9a8b72c5a9663c66581498d381a2b2a3db26799c998ed577837314328"
+    url "https://github.com/imhuso/cunzhi/releases/download/v0.2.6/cunzhi-cli-v0.2.6-macos-x86_64.tar.gz"
+    sha256 "011d7eea008097c9ec35bed624d53f73c4fb2658cf04af096a39f72f6c95fcb5"
   elsif Hardware::CPU.arm?
-    url "https://github.com/imhuso/cunzhi/releases/download/v0.2.0/cunzhi-cli-v0.2.4-macos-aarch64.tar.gz"
-    sha256 "76feb96966fb110166a4f4e504ac0a80aebaf2a3bd3ab1bff398937b337888d3"
+    url "https://github.com/imhuso/cunzhi/releases/download/v0.2.6/cunzhi-cli-v0.2.6-macos-aarch64.tar.gz"
+    sha256 "61a67c575a9c625ae7f411e0ed27d0e793947e211f5ac053a60e38914cb5633f"
   end
 
   def install
