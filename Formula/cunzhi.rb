@@ -16,19 +16,6 @@ class Cunzhi < Formula
       url     "https://github.com/imhuso/cunzhi/releases/download/v0.2.6/cunzhi-cli-v0.2.6-macos-aarch64.tar.gz"
       sha256  "61a67c575a9c625ae7f411e0ed27d0e793947e211f5ac053a60e38914cb5633f"
     end
-
-    # 如需 Homebrew 识别为 bottle，可保留/扩充下方块；
-    # 没有正式发布的 macOS 26 标签时，仍会 fallback 到最接近的版本。
-    bottle do
-      root_url "https://github.com/imhuso/cunzhi/releases/download/v0.2.6"
-
-      on_intel do
-        sha256 cellar: :any_skip_relocation, x86_64_sonoma:  "011d7eea008097c9ec35bed624d53f73c4fb2658cf04af096a39f72f6c95fcb5"
-      end
-      on_arm do
-        sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61a67c575a9c625ae7f411e0ed27d0e793947e211f5ac053a60e38914cb5633f"
-      end
-    end
   end
   # ----------------------------------
 
