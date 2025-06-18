@@ -2,19 +2,19 @@ class Cunzhi < Formula
   desc "智能代码审查MCP工具集 - 包含寸止MCP服务器和等一下弹窗界面"
   homepage "https://github.com/imhuso/cunzhi"
   license "MIT"
-  version "0.2.7"
+  version "0.2.8"
 
 
   # ------- 二进制包（非源码） -------
   on_macos do
     on_intel do
-      url     "https://github.com/imhuso/cunzhi/releases/download/v0.2.7/cunzhi-cli-v0.2.7-macos-x86_64.tar.gz"
-      sha256  "e33965697a91c2a939b1accd46a3a11c42107aa01bc02284bbe04047a8aa0727"
+      url     "https://github.com/imhuso/cunzhi/releases/download/v0.2.8/cunzhi-cli-v0.2.8-macos-x86_64.tar.gz"
+      sha256  "94d0b858aa594ce9b455abf57649cc5ea72ffdd54968c62d2487d6da05501d5f"
     end
 
     on_arm do
-      url     "https://github.com/imhuso/cunzhi/releases/download/v0.2.7/cunzhi-cli-v0.2.7-macos-aarch64.tar.gz"
-      sha256  "b3c493f492fdd4e56115dd7af2d6b4e1b4134a1835bd46427fd0b2d650bd40e9"
+      url     "https://github.com/imhuso/cunzhi/releases/download/v0.2.8/cunzhi-cli-v0.2.8-macos-aarch64.tar.gz"
+      sha256  "7b19b6ea905c816bb33ca803a3a75d26ae6e21361f22f1dc164e1da9ddf2d86b"
     end
   end
   # ----------------------------------
