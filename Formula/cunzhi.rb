@@ -9,12 +9,12 @@ class Cunzhi < Formula
   on_macos do
     on_intel do
       url     "https://github.com/imhuso/cunzhi/releases/download/v0.3.3/cunzhi-cli-v0.3.3-macos-x86_64.tar.gz"
-      sha256  "936852164546926f1a053e03b5bc4bfa92bb8ab69665e36de165c351e13b81c1"
+      sha256  "727289bd7ea00cbfecc9558ae7cfcc49953d75147a31e60b78c0f37c3efc86a9"
     end
 
     on_arm do
       url     "https://github.com/imhuso/cunzhi/releases/download/v0.3.3/cunzhi-cli-v0.3.3-macos-aarch64.tar.gz"
-      sha256  "93a732c387852c61e2031923ef93bdf917b8c0ace95d082196beb2318551b6c7"
+      sha256  "70981a24f27535beade80304cfe95bc38dc7738f8e80d3b244d9c9b6185d1c71"
     end
   end
   # ----------------------------------
